@@ -1,16 +1,33 @@
-# React + Vite
+# React CRUD Application with Axios & MockAPI
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A lightweight, practical React CRUD (Create, Read, Update, Delete) application integrated with a remote **MockAPI** backend using **Axios**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Read (GET):** Fetches all user records from the MockAPI endpoint on initial component mount via `useEffect`.
+- **Create (POST):** Sends a payload to the backend to add new user records and updates the UI.
+- **Update (PUT):** Updates existing user details targeting valid IDs dynamically.
+- **Delete (DELETE):** Removes a specific user record by ID from MockAPI and syncs local state.
+- **Global Base URL:** Preconfigured `axios.defaults.baseURL` in `main.jsx` for clean relative endpoint paths.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **Frontend:** React (Hooks: `useState`, `useEffect`)
+- **HTTP Client:** [Axios](https://axios-http.com/)
+- **Backend / Mock Database:** [MockAPI.io](https://mockapi.io/)
+- **Tooling:** Vite / npm
+
+---
+
+## Project Structure
+
+```text
+src/
+├── App.jsx        # Core component containing CRUD functions and user list rendering
+├── main.jsx       # Root mount configuration and Axios baseURL setup
+├── index.css      # Base styling
+└── App.css        # Component styling
